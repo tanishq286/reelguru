@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "name": "ReelGuru / Tally",
+    "description": "Night-studio broadcast language. An ink-black canvas lit by one tally-red 'you're live' light; heavy variable grotesk that stretches for emphasis; glass slabs and a titanium phone floating in real 3D. The page is a 30-second reel you scrub with your scroll.",
+    "source_references": [
+      "Brief: deep ink/near-black canvas, one vivid electric accent, modern grotesque display type, glassy 3D surfaces, Awwwards-level 2026 craft",
+      "Brand metaphor: the camera's REC/tally light, the moment of 'You shoot.'",
+      "Content source: ReelGuru v2 index.html (copy + structure kept verbatim)",
+      "Explicitly rejected: v2 warm cream/yellow editorial serif look (Instrument Serif on paper, lime + clay)"
+    ],
+    "created_at": "2026-09-27"
+  },
+  "design_system": {
+    "color": {
+      "palette_type": "monochromatic cool neutrals + single hot accent (complementary temperature)",
+      "primary": { "hex": "#07080A", "role": "Ink canvas: page background, 3D scene void, text on accent" },
+      "secondary": { "hex": "#B9C6DC", "role": "Ice: glass tint, cool fill/rim light, hairline highlights (only at low alpha, never as a flat fill)" },
+      "accent": { "hex": "#FF4B1F", "role": "Tally red: primary CTAs, live/REC states, emphasis words, playheads, the single full-bleed 'on air' moment (final CTA)" },
+      "neutral": {
+        "scale": ["#F3F4F6", "#C9CDD4", "#8B919C", "#5A606B", "#2A2E36", "#161920", "#0E1014", "#07080A"],
+        "usage": "#F3F4F6 bone = primary text on ink (18.9:1); #C9CDD4 = secondary text; #8B919C = muted/meta text (6.3:1); #5A606B = decorative only (3.2:1, large text or non-text); #2A2E36 = strong hairline; #161920/#0E1014 = raised surfaces; #07080A = canvas"
+      },
+      "semantic": { "success": "#3DDC97", "warning": "#FFC53D", "error": "#FF5470", "info": "#7AA7FF" },
+      "surface": { "background": "#07080A", "card": "#0E1014", "elevated": "#161920" },
+      "contrast_strategy": "high contrast: bone on ink for text; ink on tally for filled buttons (6.0:1); tally-on-ink only for display-size emphasis (5.6:1); depth from glow and glass, not from mid-grey fills"
+    },
+    "typography": {
+      "type_scale": {
+        "display": { "size": "clamp(3.4rem, 10.2vw, 11.25rem)", "weight": "800", "line_height": "0.84", "tracking": "-0.055em" },
+        "heading_1": { "size": "clamp(2.7rem, 7.4vw, 8rem)", "weight": "780", "line_height": "0.88", "tracking": "-0.048em" },
+        "heading_2": { "size": "clamp(2rem, 4vw, 3.6rem)", "weight": "720", "line_height": "0.98", "tracking": "-0.035em" },
+        "heading_3": { "size": "clamp(1.4rem, 2.1vw, 2rem)", "weight": "650", "line_height": "1.08", "tracking": "-0.02em" },
+        "body": { "size": "1.0625rem", "weight": "420", "line_height": "1.6", "tracking": "-0.004em" },
+        "body_small": { "size": "0.9375rem", "weight": "420", "line_height": "1.55", "tracking": "0" },
+        "caption": { "size": "0.8125rem", "weight": "450", "line_height": "1.45", "tracking": "0.01em" },
+        "overline": { "size": "0.72rem", "weight": "500", "line_height": "1.2", "tracking": "0.14em" }
+      },
+      "font_families": {
+        "heading": "Archivo (variable: wght 400-850, wdth 85-125), self-hosted subset",
+        "body": "Archivo (same file, wdth 100)",
+        "mono": "JetBrains Mono (variable wght 400-600), self-hosted subset: overlines, timecodes, labels"
+      },
+      "font_style_notes": "One grotesk family used across its width axis instead of a second display face: headlines set heavy at 92% width with tight negative tracking; emphasis words jump to 125% width in tally red (the stretch replaces italics/serifs). Mono carries the broadcast/editing vocabulary: timecodes, REC, slot times."
+    },
+    "spacing": {
+      "base_unit": "4px",
+      "scale": ["4px", "8px", "12px", "16px", "24px", "32px", "48px", "64px", "96px", "128px", "192px"],
+      "content_density": "spacious",
+      "section_rhythm": "Sections breathe at clamp(96px, 14vw, 200px); pinned sequences (hero, how-it-works) extend with scroll distance instead of padding; dense UI (tabs, price card) packs tighter at 16-24px"
+    },
+    "layout": {
+      "grid_system": "12-column fluid grid, content anchored left, display type allowed to break the grid and bleed under 3D",
+      "max_content_width": "1440px",
+      "columns": "12 desktop / 6 tablet / 4 mobile",
+      "gutter": "clamp(16px, 4vw, 56px)",
+      "breakpoints": { "sm": "480px", "md": "768px", "lg": "1024px", "xl": "1440px" },
+      "alignment_tendency": "asymmetric"
+    },
+    "shape": {
+      "border_radius": { "small": "10px", "medium": "18px", "large": "28px", "pill": "999px" },
+      "border_usage": "subtle 1px hairlines (bone at 8-14% alpha) with a brighter top edge to fake a light source",
+      "divider_style": "1px hairline plus timeline ruler ticks (mono timecodes) for sequential content"
+    },
+    "elevation": {
+      "shadow_style": "layered: deep ambient drop + inner top highlight + optional tally glow",
+      "levels": {
+        "low": "inset 0 1px 0 rgba(243,244,246,.06), 0 10px 30px -14px rgba(0,0,0,.7)",
+        "medium": "inset 0 1px 0 rgba(243,244,246,.08), 0 30px 60px -24px rgba(0,0,0,.8)",
+        "high": "inset 0 1px 0 rgba(243,244,246,.1), 0 60px 120px -40px rgba(0,0,0,.9), 0 0 90px -30px rgba(255,75,31,.45)"
+      },
+      "depth_cues": "blur/glass, overlapping layers, real 3D occlusion (phone in front of the headline), tally glow"
+    },
+    "iconography": {
+      "style": "minimal line glyphs + geometric dots (REC dot, slot dots)",
+      "stroke_weight": "1.6px",
+      "size_scale": ["12px", "16px", "20px"],
+      "preferred_set": "inline custom SVG (arrow, check, star-burst); no icon library"
+    },
+    "motion": {
+      "easing": "cubic-bezier(0.16, 1, 0.3, 1) signature (GSAP expo.out) for 80% of motion; cubic-bezier(0.7, 0, 0.84, 0) exits; cubic-bezier(0.65, 0, 0.35, 1) on-screen moves; elastic.out(1, 0.4) reserved for magnetic release",
+      "duration_scale": { "micro": "160ms", "normal": "480ms", "macro": "1000ms" },
+      "entrance_pattern": "masked line rise: each line slides up 110% from behind its own clip mask while settling a 3deg tilt; supporting copy follows 120-160ms later with a 24px rise + fade",
+      "exit_pattern": "fade + 12px rise at 70% of the entrance duration (ease-in)",
+      "philosophy": "cinematic, scroll-as-playhead: long sequences are scrubbed to scroll position, short UI feedback is snappy; one ambient layer always alive (orbiting cards, dust, tally breathing) at <=20% of the primary motion's energy"
+    },
+    "components": {
+      "button_style": "56px pill; primary = tally fill, ink label, live dot; ghost = 1px bone hairline; both magnetic on fine pointers with inner-label parallax",
+      "input_style": "n/a (mailto conversion); if added: 56px ink field, 1px hairline, tally focus ring",
+      "card_style": "dark glass slab: #0E1014 to #161920 gradient, 1px hairline with bright top edge, 28px radius, oversized outline numeral",
+      "navigation_pattern": "floating top bar: wordmark with REC dot, center timecode (page = 30s reel) + live section label, tally CTA right; 1px scroll progress line",
+      "modal_style": "none",
+      "list_style": "ruled rows with mono index / check glyphs",
+      "component_notes": "Tabs: mono labels with a sliding tally underline (transform only). Price card: rotating conic hairline border (transform rotate) + pointer tilt. Orb CTA: ink disc with rotating text ring."
+    }
+  },
+  "design_style": {
+    "aesthetic": {
+      "mood": ["nocturnal", "electric", "confident", "cinematic", "honest"],
+      "visual_metaphor": "A late-night broadcast studio. The red tally light means you're live; the page itself is a 30-second reel scrubbed by the scroll; content cards orbit your phone and get dealt into it, ready to post.",
+      "era_influence": "2026 post-glass 3D web, broadcast/NLE editing UI, Swiss grotesk scale",
+      "genre": "cinematic product storytelling / creative studio",
+      "personality_traits": ["direct", "warm under a cool surface", "meticulous", "unpretentious"],
+      "adjectives": ["inky", "glowing", "precise", "kinetic", "tactile"]
+    },
+    "visual_language": {
+      "complexity": "rich",
+      "ornamentation": "subtle accents (timecodes, ruler ticks, REC dots, film grain)",
+      "whitespace_usage": "generous; darkness is the whitespace",
+      "visual_weight_distribution": "bottom-left heavy type vs right-side 3D mass; single hot accent always at the focal point",
+      "focal_strategy": "progressive reveal: one hero element per viewport, the rest dimmed",
+      "contrast_level": "high",
+      "texture_usage": "static film grain at 5% + scanlines inside screens"
+    },
+    "composition": {
+      "hierarchy_method": "scale contrast + width-axis contrast + tally color weight",
+      "balance_type": "asymmetric",
+      "flow_direction": "vertical with one horizontal timeline chapter (how it works)",
+      "grouping_strategy": "stacked glass slabs, ruled lists, console/tab groupings",
+      "negative_space_role": "the dark studio void that the 3D and type float in"
+    },
+    "imagery": {
+      "photo_treatment": "none; no stock photos (the work is shown as written)",
+      "illustration_style": "UI-as-illustration: phone screens, script timelines, caption mocks, week plans",
+      "graphic_elements": "REC dot, tally glow, ruler ticks, timecodes, outline numerals, star-burst separator",
+      "pattern_usage": "ruler tick pattern, scanlines, grain",
+      "image_shape": "rounded slabs (18-28px), device silhouettes"
+    },
+    "interaction_feel": {
+      "feedback_style": "physical: magnetic pull, lift + glow, cursor morphs to state labels",
+      "hover_behavior": "lift 2-4px, hairline brightens, glow blooms; 160ms in / 240ms out",
+      "transition_personality": "smooth glide with snappy micro-feedback",
+      "loading_style": "static CSS poster first, 3D fades in when ready; never a blocking preloader",
+      "microinteraction_density": "medium-high on desktop pointer, low on touch"
+    },
+    "brand_voice_in_ui": {
+      "tone": "plain-spoken, confident, no hype",
+      "formality": "casual-professional",
+      "cta_style": "friendly invitation with zero-risk framing (free sample week)",
+      "empty_state_approach": "honest emptiness as a design element (the empty testimonial wall)",
+      "error_tone": "calm and direct"
+    }
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "heavy-immersive (hero) / moderate (rest)",
+      "performance_tier": "heavy",
+      "fallback_strategy": "static CSS poster when WebGL/CDN unavailable or Save-Data/2G; reduced-motion = single rendered 3D frame, no scrub/pin/loops/cursor; DPR caps + adaptive DPR on frame-time spikes; render loop paused offscreen/hidden tab",
+      "primary_technology": "WebGL/Three.js r185 + GSAP 3 (ScrollTrigger, SplitText) + Lenis"
+    },
+    "background_effects": {
+      "type": "noise-field",
+      "description": "Static film grain over the whole page plus a breathing tally glow behind the hero phone and radial vignettes per section",
+      "technology": "CSS (SVG feTurbulence data-URI) + WebGL additive halo plane",
+      "params": { "color_palette": ["#07080A", "#FF4B1F", "#B9C6DC"], "speed": "4.2s breathing cycle", "density": "grain 180px tile", "opacity": "0.05 grain / 0.35 halo", "blend_mode": "normal (grain) / additive (halo)" }
+    },
+    "particle_systems": {
+      "enabled": true,
+      "type": "custom",
+      "description": "Studio dust: soft round motes drifting upward in a deep shell around the phone, ~8% of them tally-hot",
+      "technology": "Three.js Points + ShaderMaterial",
+      "params": { "count": "900 desktop / 320 mobile", "shape": "soft disc (gl_PointCoord falloff)", "size_range": "1.5-6px", "movement_pattern": "slow upward drift with wraparound + sine sway", "color_behavior": "ice-white majority, tally minority, depth-faded alpha", "interaction": "pointer parallax (rig counter-motion)", "spawn_area": "ellipsoid shell 14x8x10 units" }
+    },
+    "3d_elements": {
+      "enabled": true,
+      "type": "hero-model",
+      "description": "Titanium phone with a live shader screen; six glass reel cards (HOOK, SCRIPT, CAPTION, #HASHTAGS, MON 7:30PM, WEEK 02) orbit it, get dealt out on load, and converge back into the phone as you scroll until the screen reads READY TO POST",
+      "technology": "Three.js",
+      "params": {
+        "renderer": "WebGLRenderer alpha:true, ACESFilmic, sRGB output, DPR cap 1.75 desktop / 1.5 mobile, adaptive DPR, antialias only when DPR < 2",
+        "lighting": "RoomEnvironment PMREM IBL (0.55) + white key directional + tally point rim (behind right) + ice point fill; no shadow maps",
+        "camera": "PerspectiveCamera fov 30, z 11, damped pointer parallax",
+        "materials": "MeshPhysicalMaterial titanium (metalness .85, clearcoat); glass cards MeshPhysicalMaterial transparent + clearcoat + iridescence (desktop) with onBeforeCompile fresnel rim; ShaderMaterial screen + halo + points",
+        "geometry": "ExtrudeGeometry from rounded-rect Shapes (bevelled), PlaneGeometry labels with atlas UVs, CapsuleGeometry camera island, BufferGeometry points",
+        "post_processing": ["none: additive halo plane + fresnel rims instead of UnrealBloomPass, so the canvas stays transparent over the DOM headline and mobile GPUs skip full-screen passes"],
+        "interaction_model": "pointer parallax (rig + camera counter-motion), raycast hover lift + rim glow + cursor label, mouse drag spin with inertia, scroll-scrubbed convergence"
+      }
+    },
+    "shader_effects": {
+      "enabled": true,
+      "type": "custom-GLSL",
+      "description": "Phone screen: fbm value-noise tally plume, rounded-rect SDF mask, scanlines, playback bar, glass sheen sweep, crossfade LIVE -> READY TO POST UI atlas. Glass fresnel rim injected into MeshPhysicalMaterial.",
+      "technology": "Three.js ShaderMaterial + onBeforeCompile",
+      "params": { "uniforms": ["uTime", "uReady", "uUI", "uAccent", "uAspect", "uRim", "uRimColor", "uPR", "uSize"], "vertex_manipulation": "points drift/wrap in vertex shader", "fragment_output": "linear color -> tonemapping + sRGB chunks", "noise_type": "fbm (value noise, 4 octaves)", "distortion": "none (UV scroll only)" }
+    },
+    "scroll_effects": {
+      "parallax": { "enabled": true, "layers": "3", "depth_range": "ghost price numerals 0.2x, section glows 0.5x, content 1x", "speed_curve": "linear scrub" },
+      "scroll_triggered_animations": { "enabled": true, "trigger_points": ["top 82%", "top top (pins)", "center center (horizontal panels)"], "animation_type": "clip-reveal masked lines, fade-up, stack-scale, rotateX flip-in", "scrub_behavior": "hero + how-it-works + card stack scrubbed (scrub 0.6-1); text reveals triggered once" },
+      "scroll_morphing": { "enabled": true, "description": "Hero pin: orbiting cards converge into the phone, phone turns to face camera and slides center, screen crossfades to READY TO POST. How it works: vertical scroll becomes a horizontal NLE timeline with a tally playhead. Nav timecode maps the whole page to a 00:00-00:30 reel." }
+    },
+    "text_effects": {
+      "type": "split-letter-animate",
+      "description": "SplitText with line masks for every display heading; hero splits to chars for a 22ms cascade",
+      "technology": "GSAP SplitText (mask: lines, autoSplit)",
+      "params": { "split_strategy": "by-line (headings), by-char (hero)", "animation_per_unit": "yPercent 110 -> 0, rotate 3deg -> 0", "stagger": "0.022s chars / 0.08s lines (total < 500ms)", "effect_style": "masked rise" }
+    },
+    "cursor_effects": {
+      "enabled": true,
+      "type": "custom-cursor",
+      "description": "Instant dot + lagging ring; ring grows over links, shows labels ('Drag', card names, 'Email') over 3D and CTAs; magnetic buttons with inner-label parallax",
+      "params": { "shape": "8px dot + 38px ring", "size": "ring scales 1 -> 2.2 on interactive", "blend_mode": "difference (dot)", "trail": "none (lerped ring only)", "interaction_zone": "fine pointers only; magnetic radius = element bounds + 24px" }
+    },
+    "image_effects": {
+      "type": "parallax-tilt",
+      "description": "Price card and brief card tilt toward the pointer with a moving spotlight",
+      "technology": "GSAP quickTo on rotateX/rotateY + translated radial glow",
+      "params": { "filter_pipeline": "none", "hover_transform": "rotateX/Y max 6deg, perspective 1200px", "reveal_animation": "rotateX flip-in for honesty frames", "distortion_type": "none" }
+    },
+    "glassmorphism_neumorphism": {
+      "enabled": true,
+      "style": "glass",
+      "params": { "blur_radius": "18px (static nav/brief only; never on animated layers)", "transparency": "0.04-0.08 bone over ink", "border_treatment": "1px hairline, brighter top edge", "shadow_type": "layered deep drop + inner highlight", "light_source_angle": "135deg (top-left)" }
+    },
+    "canvas_drawings": {
+      "enabled": true,
+      "type": "pattern-fill",
+      "description": "2D canvas draws the card-label atlas and the phone screen UI states (LIVE/READY) once, after fonts load, as CanvasTextures",
+      "technology": "Canvas 2D -> THREE.CanvasTexture",
+      "params": { "draw_method": "fillText + roundRect", "animation_loop": "none (static atlas; motion lives in the shader)", "color_scheme": "bone/ice on transparent, tally chips", "responsiveness": "fixed 1024px atlas, mipmapped, max anisotropy", "interaction": "none" }
+    },
+    "svg_animations": {
+      "enabled": true,
+      "type": "decorative-loop",
+      "description": "Rotating text ring on the orb CTA, spinning star-burst in the marquee (velocity-driven), check glyph draws in the price list",
+      "params": { "animation_method": "CSS/GSAP transform rotate; stroke-dashoffset for checks", "path_morphing": "none", "stroke_animation": "check path draw 480ms", "filter_effects": "none" }
+    },
+    "composite_notes": "Layer order in the hero is deliberate: DOM headline (z1) < transparent WebGL canvas (z2) < DOM UI (z3), so the phone and glass cards physically pass in front of the giant type. That is why bloom is faked with an additive halo and fresnel rims rather than an EffectComposer pass (which would force an opaque canvas). All DOM motion is transform/opacity only; SplitText masks, sticky stacking, and the horizontal track use translate/scale. Three.js loads after window load/idle and is skipped on Save-Data/2G; the CSS poster is the permanent fallback."
+  }
+}
